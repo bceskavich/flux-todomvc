@@ -1,0 +1,39 @@
+{
+  "name": "flux-todomvc",
+  "version": "0.0.1",
+  "description": "Example Flux architecture from Facebook's TodoMVC tutorial.",
+  "main": "src/server.js",
+  "dependencies": {
+    "flux": "^2.0.1",
+    "keymirror": "~0.1.0",
+    "object-assign": "^1.0.0",
+    "react": "^0.12.0",
+    "es6-promise": "^2.3.0",
+    "express": "^4.12.4"
+  },
+  "devDependencies": {
+    "browserify": "^6.2.0",
+    "envify": "^3.0.0",
+    "jest-cli": "^0.4.3",
+    "reactify": "^0.15.2",
+    "uglify-js": "~2.4.15",
+    "watchify": "^2.1.1"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "build": "browserify src/app/app.js > src/build/bundle.js",
+    "watch": "watchify src/app/app.js -o src/build/bundle.js",
+    "test": "jest"
+  },
+  "browserify": {
+    "transform": [
+      "reactify",
+      "envify"
+    ]
+  },
+  "jest": {
+    "rootDir": "./src"
+  },
+  "author": "Billy Ceskavich",
+  "license": "ISC"
+}
